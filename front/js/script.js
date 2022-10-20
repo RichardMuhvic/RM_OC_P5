@@ -17,18 +17,9 @@ let products;
 
 // Création de la boucle 'for' pour afficher les produits :
 for(let i=0; i<products[i].length; i++ ) {
+    console.log(products);
     // Création de la section article qui va recevoir tous les élements des produits :
     const sectionArticle = document.querySelector("#items");
-
-    // Création du block html du DOM :
-    sectionArticle.querySelector("#items").innerHTML += 
-    `<a href="./product.html?id=42">
-        <article>
-            <img src=".../product01.jpg" alt="Lorem ipsum dolor sit amet, Kanap name1">
-            <h3 class="productName">Kanap name1</h3>
-            <p class="productDescription">Dis enim malesuada risus sapien gravida nulla nisl arcu. Dis enim malesuada risus sapien gravida nulla nisl arcu.</p>
-        </article>
-    </a>`;
 
     // Création des éléments dans le DOM :
     const products = products[i];
@@ -56,4 +47,14 @@ for(let i=0; i<products[i].length; i++ ) {
     sectionArticle.appendChild(productImage);
     sectionArticle.appendChild(productName);
     sectionArticle.appendChild(productDescription);
+
+    // Création du block html du DOM :
+    sectionArticle.querySelector("#items").innerHTML += 
+    `<a href="./product.html?id=${productId}">
+        <article>
+            <img src=${productImage} alt=${productAltTxt}>
+            <h3 class="productName">${productName}</h3>
+            <p class="productDescription">${productDescription}</p>
+        </article>
+    </a>`;
 };
