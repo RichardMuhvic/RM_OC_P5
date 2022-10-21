@@ -14,9 +14,9 @@ fetch("http://localhost:3000/api/products")
     });
 
 // Déclaration de la variable products :
-let products;
+//let products;
 
-function products(value) {
+function value(products) {
     for( let i = 0; i < products.length; i++ ) {
         // Création de la section article qui va recevoir tous les élements des produits :
         const sectionBlock = document.querySelector(".items");
@@ -59,4 +59,4 @@ function products(value) {
     };
 };
 
-products(value);
+value(products);
