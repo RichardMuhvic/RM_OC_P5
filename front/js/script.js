@@ -17,34 +17,36 @@ let products;
 
 function items(products) {
     // Création de la boucle 'for' pour afficher les produits :
-    for(let i=0; i<products[i].length; i++ ) {
+    for( let i=0; i<products.length; i++ ) {
+
         // Création de la section article qui va recevoir tous les élements des produits :
-        const sectionArticle = document.querySelector(".items");
+        const sectionBlock = document.querySelector(".items");
+
+        // Création d'une balise article pour accueillir l'ensemble du block :
+        const sectionArticle = document.createElement("article");
 
         // Création des éléments dans le DOM :
         const productId = document.createElement("a");
-        productId = products._id;
+        // On accède à l'indice 'i' de la liste product pour configurer la source de l'ID :
+        productId = products[i]._id;
+        // On rattache l'ID à sectionArticle (la balise article) :
+        sectionArticle.appendChild(productId);
 
+        // On recommence les trois opérations précédentes pour image, name, description:
         const productImage = document.createElement("img");
-        productImage = products.imageUrl;
+        productImage = products[i].imageUrl;
+        sectionArticle.appendChild(productImage);
 
         const productName = document.createElement("h3");
-        productName = products.name;
+        productName = products[i].name;
+        sectionArticle.appendChild(productName);
 
         const productDescription = document.createElement("p");
-        productDescription = products.description;
-
-        const productAltTxt = document.createElement("alt");
-        productAltTxt = products.altTxt;
-
-        const productPrice = document.createElement("p");
-        productPrice = products.price;
-
-        // Parenter les éléments à la section article :
-        sectionArticle.appendChild(productId);
-        sectionArticle.appendChild(productImage);
-        sectionArticle.appendChild(productName);
+        productDescription = products[i].description;
         sectionArticle.appendChild(productDescription);
+
+        // On rattache la balise article à la section fiches
+		sectionBlock.appendChild(sectionArticle);
 
         // Création du block html du DOM :
         sectionArticle.querySelector("#items").innerHTML += 
