@@ -13,48 +13,17 @@ fetch("http://localhost:3000/api/products")
         console.log(err);
     });
 
-// Déclaration de la variable products :
-//let products;
 
 function display(products) {
     for( let i = 0; i < products.length; i++ ) {
-        // Création de la section article qui va recevoir tous les élements des produits :
-        let sectionBlock = document.querySelector(".items");
-    
-        // Création d'une balise article pour accueillir l'ensemble du block :
-        let sectionArticle = document.createElement("article");
-    
-        // Création des éléments dans le DOM :
-        let productId = document.createElement("a");
-        // On accède à l'indice 'i' de la liste product pour configurer la source de l'ID :
-        productId = products[i]._id;
-        // On rattache l'ID à sectionArticle (la balise article) :
-        sectionArticle.appendChild(productId);
-    
-        // On recommence les trois opérations précédentes pour image, name, description:
-        let productImage = document.createElement("img");
-        productImage = products[i].imageUrl;
-        sectionArticle.appendChild(productImage);
-    
-        let productName = document.createElement("h3");
-        productName = products[i].name;
-        sectionArticle.appendChild(productName);
-    
-        let productDescription = document.createElement("p");
-        productDescription = products[i].description;
-        sectionArticle.appendChild(productDescription);
-    
-        // On rattache la balise article à la section fiches
-        sectionBlock.appendChild(sectionArticle);
-    
-        // Création du block HTML du DOM :
-        sectionArticle.querySelector("# items").innerHTML += 
+
+        document.getElementById("items").innerHTML += 
         `<a href="./product.html?id=${products[i]._id}">
             <article>
-                <img src=${products[i].imageUrlmage} alt=${products[i].altTxt}>
+                <img src="${products[i].imageUrl}" alt="${products[i].altTxt}">
                 <h3 class="productName">${products[i].name}</h3>
                 <p class="productDescription">${products[i].description}</p>
            </article>
-      </a>`;
+        </a>`;
     };
 };
