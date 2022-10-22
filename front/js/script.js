@@ -19,28 +19,28 @@ fetch("http://localhost:3000/api/products")
 function display(products) {
     for( let i = 0; i < products.length; i++ ) {
         // Création de la section article qui va recevoir tous les élements des produits :
-        const sectionBlock = document.querySelector(".items");
+        let sectionBlock = document.querySelector(".items");
     
         // Création d'une balise article pour accueillir l'ensemble du block :
-        const sectionArticle = document.createElement("article");
+        let sectionArticle = document.createElement("article");
     
         // Création des éléments dans le DOM :
-        const productId = document.createElement("a");
+        let productId = document.createElement("a");
         // On accède à l'indice 'i' de la liste product pour configurer la source de l'ID :
         productId = products[i]._id;
         // On rattache l'ID à sectionArticle (la balise article) :
         sectionArticle.appendChild(productId);
     
         // On recommence les trois opérations précédentes pour image, name, description:
-        const productImage = document.createElement("img");
+        let productImage = document.createElement("img");
         productImage = products[i].imageUrl;
         sectionArticle.appendChild(productImage);
     
-        const productName = document.createElement("h3");
+        let productName = document.createElement("h3");
         productName = products[i].name;
         sectionArticle.appendChild(productName);
     
-        const productDescription = document.createElement("p");
+        let productDescription = document.createElement("p");
         productDescription = products[i].description;
         sectionArticle.appendChild(productDescription);
     
