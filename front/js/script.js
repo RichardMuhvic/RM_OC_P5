@@ -1,4 +1,3 @@
-import {productID} from "./product.js";
 
 //Utilisation de 'fetch' pour requêter l'API :
 fetch("http://localhost:3000/api/products")
@@ -28,6 +27,4 @@ function display(products) {
         </a>`;
     };
 };
-
-productID();
 
