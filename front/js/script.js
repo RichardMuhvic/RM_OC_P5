@@ -1,3 +1,5 @@
+import {productID} from "./product.js";
+
 //Utilisation de 'fetch' pour requêter l'API :
 fetch("http://localhost:3000/api/products")
     .then(function(res) {
@@ -27,11 +29,5 @@ function display(products) {
     };
 };
 
-//URLsearchParams :
-let paramsID = "http://localhost:3000/api/products.html?id="+_id;
-let searchParams = new URLSearchParams(paramsID);
-
-for (let p of searchParams) {
-    console.log(searchParams);
-};
+productID();
 
