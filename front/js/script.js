@@ -13,7 +13,6 @@ fetch("http://localhost:3000/api/products")
         console.log(err);
     });
 
-
 function display(products) {
     for( let i = 0; i < products.length; i++ ) {
 
@@ -27,3 +26,12 @@ function display(products) {
         </a>`;
     };
 };
+
+//URLsearchParams :
+let paramsID = "http://localhost:3000/api/products.html?id="+_id;
+let searchParams = new URLSearchParams(paramsID);
+
+for (let p of searchParams) {
+    console.log(searchParams);
+};
+
