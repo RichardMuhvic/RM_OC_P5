@@ -1,9 +1,10 @@
+function productID() {
+    let url = new URL(product);
+    let searchParams = new URLSearchParams(url.search);
+    
+    for ( let p in searchParams ) {
+        console.log(p);
 
-export function productID() {
-
-    for (let i in productID) {
-        //URLsearchParams :
-        
         let product = fetch("http://localhost:3000/api/products.html?id"+productID[i]._id)
         .then(function(res) {
             if (res.ok) {
@@ -18,11 +19,6 @@ export function productID() {
             console.log(err);
         });
 
-
-        let url = new URL(product);
-        let searchParams = new URLSearchParams(url.search);
-        for (let p of searchParams) {
-            console.log(p);
-        };
+        console.log(product);
     };
 };
